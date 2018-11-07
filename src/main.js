@@ -1,4 +1,5 @@
 import MainMenu from '/src/MainMenu.js';
+import Game from '/src/Game.js';
 //import Game from 'Game.js';
 
 var config = {
@@ -9,7 +10,8 @@ var config = {
     physics:{
         default: 'arcade'
     },
-    scene: [MainMenu]
+    backgroundColor: '#32698C',
+    scene: [MainMenu, Game]
 };
 
 var game = new Phaser.Game(config);
