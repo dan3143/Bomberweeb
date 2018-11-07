@@ -6,16 +6,49 @@ export default class Game extends Phaser.Scene {
     }
     
     preload(){
-        this.load.spritesheet('fox', '/../assets/sprites/sprite_fox.png', {frameWidth: 32, frameHeight: 60});
+        this.load.spritesheet('fox', 'assets/sprites/sprite_fox.png', {frameWidth: 32, frameHeight: 60});
+        this.load.spritesheet('girl', 'assets/sprites/player2.png',{frameWidth:19,frameHeight:29});
         
     }
     
     create(){
         this.cursors = this.input.keyboard.createCursorKeys();
         this.fox = this.physics.add.sprite(100, 100, 'fox');
+        this.girl = this.physics.add.sprite(500, 500, 'girl');
         
         this.fox.setCollideWorldBounds(true);
-
+        this.girl.setCollideWorldBounds(true);
+        this.anims.create({
+            key: 'down',
+            frames: this.anims.generateFrameNumbers('girl', { start: 6, end: 8 }),
+            frameRate: 5,
+            repeat: -1
+        });
+        this.anims.create({
+            key: 'up',
+            frames: this.anims.generateFrameNumbers('girl', { start: 3, end: 5 }),
+            frameRate: 5,
+            repeat: -1
+        });
+        this.anims.create({
+            key: 'left',
+            frames: this.anims.generateFrameNumbers('girl', { start: 0, end: 2 }),
+            frameRate: 5,
+            repeat: -1
+        });
+        this.anims.create({
+            key: 'right',
+            frames: this.anims.generateFrameNumbers('girl', { start: 9, end: 11 }),
+            frameRate: 5,
+            repeat: -1
+        });
+        this.anims.create({
+            key: 'steady',
+            frames: [{key:'fox', frame:6}],
+            frameRate: 5,
+            repeat: -1
+        });
+  
         this.anims.create({
             key: 'down',
             frames: this.anims.generateFrameNumbers('fox', { start: 8, end: 11 }),
@@ -46,6 +79,7 @@ export default class Game extends Phaser.Scene {
             frameRate: 5,
             repeat: -1
         });
+        
     }
     
     update(){
@@ -63,6 +97,24 @@ export default class Game extends Phaser.Scene {
         }else if (this.cursors.down.isDown){
             this.fox.setVelocityY(this.speed);
             this.fox.anims.play('up', true);
+        }else{
+            this.fox.anims.play('steady', true);
+        
+
+        this.girl.setVelocity(0);
+        
+        if (this.cursors.left.isDown){
+            this.girl.setVelocityX(-this.speed);
+            this.girl.anims.play('left', true);
+        }else if (this.cursors.right.isDown){
+            this.girl.setVelocityX(this.speed);
+            this.girl.anims.play('right', true);
+        }else if (this.cursors.up.isDown){
+            this.girl.setVelocityY(-this.speed);
+            this.girl.anims.play('up', true);
+        }else if (this.cursors.down.isDown){
+            this.girl.setVelocityY(this.speed);
+            this.girl.anims.play('down', true);
         }else{
             this.fox.anims.play('steady', true);
         }
