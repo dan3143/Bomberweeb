@@ -9,11 +9,11 @@ export default class MainMenu extends Phaser.Scene {
     }
 
     preload() {
-        this.load.image('megu', 'assets/megumin.png');
+        
     }
 
     create() {   
-        this.initialize();   
+        this.initialize();
     }
 
     update() {
@@ -24,6 +24,7 @@ export default class MainMenu extends Phaser.Scene {
         this.add.text(90, 100, "BomberWeeb", { font: "90px Courier", fill: "#AED7F1" });
         this.startGame = this.add.text(100, 250, 'Comenzar juego', font).setInteractive({ useHandCursor: true  } );
         this.instructions = this.add.text(100, 300, 'Instrucciones', font).setInteractive({ useHandCursor: true  } );
+        this.socket = io();
         this.assignEvents();
     }
 
@@ -41,6 +42,7 @@ export default class MainMenu extends Phaser.Scene {
         this.startGame.on('pointerdown', function(){
             self.startGame.setColor("#000000");
             self.scene.start('Game', new Game);
+            self.socket.disconnect();
         });
 
         this.startGame.on('pointerup', function(){

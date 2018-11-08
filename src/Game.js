@@ -1,116 +1,121 @@
 export default class Game extends Phaser.Scene {
     
+      
+
     constructor(){
         super({key: 'Game'});
-        this.speed = 300;
         this.state = 0;
+        this.speed = 300;
     }
     
     preload(){
-<<<<<<< HEAD
-        this.load.spritesheet('fox', 'assets/sprites/sprite_fox.png', {frameWidth: 32, frameHeight: 60});
-        this.load.spritesheet('girl', 'assets/sprites/player2.png',{frameWidth:19,frameHeight:29});
-        
-=======
-        this.load.spritesheet('fox', 'assets/sprites/sprite_fox.png', {frameWidth: 32, frameHeight: 60});    
->>>>>>> f103fdf4a246dc7f365a5738cc45b44d8545a3e7
+        this.load.spritesheet('player1', 'assets/sprites/player1.png', {frameWidth: 32, frameHeight: 60});
+        this.load.spritesheet('player2', 'assets/sprites/player2.png', {frameWidth: 28, frameHeight: 54});
     }
     
     create(){
-        this.cursors = this.input.keyboard.createCursorKeys();
-<<<<<<< HEAD
-        this.fox = this.physics.add.sprite(100, 100, 'fox');
-        this.girl = this.physics.add.sprite(500, 500, 'girl');
-        
-        this.fox.setCollideWorldBounds(true);
-        this.girl.setCollideWorldBounds(true);
-        this.anims.create({
-            key: 'down',
-            frames: this.anims.generateFrameNumbers('girl', { start: 6, end: 8 }),
-            frameRate: 5,
-            repeat: -1
-        });
-        this.anims.create({
-            key: 'up',
-            frames: this.anims.generateFrameNumbers('girl', { start: 3, end: 5 }),
-            frameRate: 5,
-            repeat: -1
-        });
-        this.anims.create({
-            key: 'left',
-            frames: this.anims.generateFrameNumbers('girl', { start: 0, end: 2 }),
-            frameRate: 5,
-            repeat: -1
-        });
-        this.anims.create({
-            key: 'right',
-            frames: this.anims.generateFrameNumbers('girl', { start: 9, end: 11 }),
-            frameRate: 5,
-            repeat: -1
-        });
-        this.anims.create({
-            key: 'steady',
-            frames: [{key:'fox', frame:6}],
-            frameRate: 5,
-            repeat: -1
-        });
-  
-=======
-        this.player = this.physics.add.sprite(100, 100, 'fox');
-        
-        this.player.setCollideWorldBounds(true);
+        this.initialize();
+    }
 
->>>>>>> f103fdf4a246dc7f365a5738cc45b44d8545a3e7
+    update(){
+        
+    }
+
+    initialize(){
+        this.socket = io();
+        this.socket.emit('playerConnected');
+        this.cursors = this.input.keyboard.createCursorKeys();
+        this.createAnimations();
+        this.players = this.physics.add.group();
+        
+        var self = this;
+        this.socket.on('newPlayer', function(player){
+            console.log('Adding new player...');
+            self.addPlayer(player);
+        });
+
+        this.socket.on('connectedPlayers', function(players){
+            console.log('Adding new players...');
+            Object.keys(players).forEach(function(id){
+                self.addPlayer(players[id]);
+            });
+        });
+
+        this.socket.on('newPlayer', function(player){
+            self.addPlayer(player);
+        });
+
+        this.socket.on('playerDisconnected', function(playerToDeleteId){
+            self.players.getChildren().forEach(function(currentPlayer){
+                if (currentPlayer.playerId === playerToDeleteId) {
+                    console.log('Player '+ currentPlayer.playerNumber +': destroying...');
+                    currentPlayer.destroy();
+                }
+            })
+        });
+    }
+
+    addPlayer(player){
+        if (player.playerId === this.socket.id){
+            console.log('It\'s me');
+            this.add.text(20, 10, "Player " + player.playerNumber, { font: "20px Courier", fill: "#AED7F1" });
+        }
+        const otherPlayer = this.physics.add.sprite(player.x, player.y, player.playerNumber == 1 ? 'player1' : 'player2');
+        otherPlayer.playerId = player.playerId; 
+        otherPlayer.playerNumber = player.playerNumber;
+        otherPlayer.setCollideWorldBounds(true);
+        this.players.add(otherPlayer);
+    }
+
+    createAnimations(){
         this.anims.create({
             key: 'up',
-            frames: this.anims.generateFrameNumbers('fox', { start: 8, end: 11 }),
+            frames: this.anims.generateFrameNumbers('player', { start: 8, end: 11 }),
             frameRate: 10,
             repeat: -1
         });
         this.anims.create({
             key: 'down',
-            frames: this.anims.generateFrameNumbers('fox', { start: 0, end: 3 }),
+            frames: this.anims.generateFrameNumbers('player', { start: 0, end: 3 }),
             frameRate: 10,
             repeat: -1
         });
         this.anims.create({
             key: 'left',
-            frames: this.anims.generateFrameNumbers('fox', { start: 12, end: 15 }),
+            frames: this.anims.generateFrameNumbers('player', { start: 12, end: 15 }),
             frameRate: 10,
             repeat: -1
         });
         this.anims.create({
             key: 'right',
-            frames: this.anims.generateFrameNumbers('fox', { start: 4, end: 7 }),
+            frames: this.anims.generateFrameNumbers('player', { start: 4, end: 7 }),
             frameRate: 10,
             repeat: -1
         });
         this.anims.create({
             key: 'steady_up',
-            frames: [{key:'fox', frame:8}],
+            frames: [{key:'player', frame:8}],
             frameRate: 5,
         });
         this.anims.create({
             key: 'steady_down',
-            frames: [{key:'fox', frame:0}],
+            frames: [{key:'player', frame:0}],
             frameRate: 5,
         });
         this.anims.create({
             key: 'steady_left',
-            frames: [{key:'fox', frame:12}],
+            frames: [{key:'player', frame:12}],
             frameRate: 5,
         });
         this.anims.create({
             key: 'steady_right',
-            frames: [{key:'fox', frame:4}],
+            frames: [{key:'player', frame:4}],
             frameRate: 5,
         });
-        
     }
-    
-    update(){
+
+    move(){
         this.player.setVelocity(0);
-        
         if (this.cursors.left.isDown){
             this.player.setVelocityX(-this.speed);
             this.player.anims.play('left', true);
@@ -128,27 +133,6 @@ export default class Game extends Phaser.Scene {
             this.player.anims.play('down', true);
             this.state = 1;
         }else{
-<<<<<<< HEAD
-            this.fox.anims.play('steady', true);
-        
-
-        this.girl.setVelocity(0);
-        
-        if (this.cursors.left.isDown){
-            this.girl.setVelocityX(-this.speed);
-            this.girl.anims.play('left', true);
-        }else if (this.cursors.right.isDown){
-            this.girl.setVelocityX(this.speed);
-            this.girl.anims.play('right', true);
-        }else if (this.cursors.up.isDown){
-            this.girl.setVelocityY(-this.speed);
-            this.girl.anims.play('up', true);
-        }else if (this.cursors.down.isDown){
-            this.girl.setVelocityY(this.speed);
-            this.girl.anims.play('down', true);
-        }else{
-            this.fox.anims.play('steady', true);
-=======
             switch(this.state){
                 case 0:{
                     this.player.anims.play('steady_up', true);
@@ -167,7 +151,6 @@ export default class Game extends Phaser.Scene {
                     break;
                 }
             }
->>>>>>> f103fdf4a246dc7f365a5738cc45b44d8545a3e7
         }
     }
 }
