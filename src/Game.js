@@ -7,7 +7,7 @@ export default class Game extends Phaser.Scene {
     
     preload(){
         this.load.image('tiles',"assets/maps/2Gen's 64x64 Mixed Tileset.png");
-        this.load.tilemapTiledJSON('map','assets/maps/MAPA.json');
+        this.load.tilemapTiledJSON('map','assets/maps/map.json');
         this.load.spritesheet('player1', 'assets/sprites/player1.png', {frameWidth: 32, frameHeight: 60});
         this.load.spritesheet('player2', 'assets/sprites/player2.png', {frameWidth: 28, frameHeight: 54});
     }
