@@ -56,13 +56,13 @@ export default class Game extends Phaser.Scene {
     }
 
     addPlayer(player){
-        const playerNumber = player.playerNumber == 1 ? 'player1' : 'player2';
+        const playerNumber = player.playerNumber;
         this.createAnimations(playerNumber);
         if (player.playerId === this.socket.id){
             this.player = this.physics.add.sprite(player.x, player.y, playerNumber);
             this.player.playerNumber = playerNumber;
         }else{
-            const otherPlayer = this.physics.add.sprite(player.x, player.y, player.playerNumber == 1 ? 'player1' : 'player2');
+            const otherPlayer = this.physics.add.sprite(player.x, player.y, player.playerNumber);
             otherPlayer.playerId = player.playerId; 
             otherPlayer.setCollideWorldBounds(true);
             this.players.add(otherPlayer);
@@ -70,7 +70,6 @@ export default class Game extends Phaser.Scene {
     }   
 
     createAnimations(playerNumber){
-        console.log("Creating animations for: " + playerNumber);
         this.anims.create({
             key: 'up' + playerNumber,
             frames: this.anims.generateFrameNumbers(playerNumber, { start: 8, end: 11 }),
@@ -119,7 +118,6 @@ export default class Game extends Phaser.Scene {
 
     movePlayer(){
         if (this.player) {
-            console.log('Move player. Player number: ' + this.player.playerNumber);
             if (!this.player.direction) this.player.direction = 'steady_down' + this.player.playerNumber;
             var animation = 'steady_down' + this.player.playerNumber;
             this.player.setVelocity(0);
@@ -143,7 +141,6 @@ export default class Game extends Phaser.Scene {
             }else{
                 animation = this.player.direction;
             }
-
             this.player.anims.play(animation, true);
             this.socket.emit('movement', {x: this.player.x, y: this.player.y, animation: animation});
         }

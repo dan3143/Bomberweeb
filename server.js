@@ -56,14 +56,14 @@ io.on('connect', function(socket){
 function getPlayerNumber(){
     if (player1 === false){
         player1 = true;
-        return 1;
+        return 'player1';
     }else if (player2 === false){
         player2 = true;
-        return 2;
+        return 'player2';
     }else{
         player1 = true;
         player2 = false;
-        return 1;
+        return 'player1';
     }
 }
 
