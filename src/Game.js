@@ -27,6 +27,7 @@ export default class Game extends Phaser.Scene {
         this.socket = io();
         this.cursors = this.input.keyboard.createCursorKeys();
         this.players = this.physics.add.group();
+        this.bombs = this.physics.add.staticGroup();
         this.spaceKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
         var self = this;
 
@@ -75,12 +76,14 @@ export default class Game extends Phaser.Scene {
             const spawnPoint = this.map.findObject("Objects", obj => obj.name === ('spawn' + playerNumber));
             this.player = this.physics.add.sprite(spawnPoint.x, spawnPoint.y, playerNumber);
             this.player.playerNumber = playerNumber;
+
             this.physics.add.collider(this.player, this.decor);
+            this.physics.add.collider(this.player, this.bombs);
+
             this.addCamera();
             this.socket.emit('movement', {x: this.player.x, y: this.player.y, animation: 'steady_down' + playerNumber});
             
         }else{
-            
             const otherPlayer = this.physics.add.sprite(player.x, player.y, player.playerNumber);
             otherPlayer.playerId = player.playerId; 
             otherPlayer.setCollideWorldBounds(true);
@@ -138,7 +141,7 @@ export default class Game extends Phaser.Scene {
     addCamera(){
         this.cameras.main.setBounds(0, 0, 1923, 1923);
         this.cameras.main.startFollow(this.player, true, 0.09, 0.09);
-        this.cameras.main.setZoom(0.409);
+        this.cameras.main.setZoom(0.6);
     }
     
     update(){
@@ -181,7 +184,7 @@ export default class Game extends Phaser.Scene {
     createBomb(){
         if (this.canPlantBomb){
             this.canPlantBomb = false;
-            if (!this.image) {
+            if (!this.bomb) {
                 this.setBomb();
             } 
         }
@@ -195,13 +198,13 @@ export default class Game extends Phaser.Scene {
                 const bomb_x = tile.x*tile_width+tile_width/2;
                 const bomb_y = tile.y*tile_height+tile_height/2;
                 self.socket.emit('bombPlacement', {x: bomb_x, y: bomb_y});
-                self.image = self.physics.add.image(bomb_x, bomb_y, 'bomb').setScale(0.3);        
+                self.bomb = self.bombs.create(bomb_x, bomb_y, 'bomb');
             }
         });
         this.time.delayedCall(2000, function(){
             self.socket.emit('enemyBombExploded');
-            this.image.destroy();
-            delete this.image;
+            this.bomb.destroy();
+            delete this.bomb;
         }, [], this);
     }
 
