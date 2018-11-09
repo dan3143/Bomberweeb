@@ -28,6 +28,17 @@ io.on('connect', function(socket){
             delete players[socket.id];
             console.log('Player disconnected');
         });
+
+        socket.on('movement', function(movementInfo){
+            players[socket.id].x = movementInfo.x;
+            players[socket.id].y = movementInfo.y;
+            socket.broadcast.emit('playerMoved', {
+                x: movementInfo.x, 
+                y: movementInfo.y, 
+                animation: movementInfo.animation, 
+                playerId: socket.id
+            });
+        });
         
         console.log("A player entered the game");
         socket.emit('connectedPlayers', players);   
