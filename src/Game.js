@@ -1,28 +1,25 @@
+const tile_width = 64;
+const tile_height = 64;
+
 export default class Game extends Phaser.Scene {
     
+
     constructor(){
         super({key: 'Game'});
         this.speed = 300;
+        this.canPlantBomb = true;
     }
     
     preload(){
         this.load.image('tiles',"assets/maps/2Gen's 64x64 Mixed Tileset.png");
+        this.load.image('bomb', 'assets/sprites/bomb.png');
         this.load.tilemapTiledJSON('map','assets/maps/map.json');
         this.load.spritesheet('player1', 'assets/sprites/player1.png', {frameWidth: 32, frameHeight: 60});
         this.load.spritesheet('player2', 'assets/sprites/player2.png', {frameWidth: 28, frameHeight: 54});
     }
-    createMap(){
-        this.map = this.make.tilemap({key:'map'});
-        this.tileset = this.map.addTilesetImage("2Gen's 64x64 Mixed Tileset",'tiles');
-        this.decor = this.map.createStaticLayer('decor', this.tileset, 0, 0);
-        this.decor.setCollisionByProperty({collides: true});
-    }
+
     create(){
         this.initialize();
-    }
-
-    update(){
-        this.movePlayer();
     }
 
     initialize(){
@@ -30,6 +27,7 @@ export default class Game extends Phaser.Scene {
         this.socket = io();
         this.cursors = this.input.keyboard.createCursorKeys();
         this.players = this.physics.add.group();
+        this.spaceKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
         var self = this;
 
         this.socket.emit('playerConnected');
@@ -62,6 +60,13 @@ export default class Game extends Phaser.Scene {
             });
         });
     }
+    
+    createMap(){
+        this.map = this.make.tilemap({key:'map'});
+        this.tileset = this.map.addTilesetImage("2Gen's 64x64 Mixed Tileset",'tiles');
+        this.decor = this.map.createStaticLayer('decor', this.tileset, 0, 0);
+        this.decor.setCollisionByProperty({collides: true});
+    }
 
     addPlayer(player){
         const playerNumber = player.playerNumber;
@@ -82,12 +87,6 @@ export default class Game extends Phaser.Scene {
             this.players.add(otherPlayer);
         }
     }   
-
-    addCamera(){
-        this.cameras.main.setBounds(0, 0, 1923, 1923);
-        this.cameras.main.startFollow(this.player, true, 0.09, 0.09);
-        this.cameras.main.setZoom(0.409);
-    }
 
     createAnimations(playerNumber){
         this.anims.create({
@@ -136,6 +135,16 @@ export default class Game extends Phaser.Scene {
         });
     }
 
+    addCamera(){
+        this.cameras.main.setBounds(0, 0, 1923, 1923);
+        this.cameras.main.startFollow(this.player, true, 0.09, 0.09);
+        this.cameras.main.setZoom(0.409);
+    }
+    
+    update(){
+        this.movePlayer();
+    }
+
     movePlayer(){
         if (this.player) {
             if (!this.player.direction) this.player.direction = 'steady_down' + this.player.playerNumber;
@@ -161,8 +170,53 @@ export default class Game extends Phaser.Scene {
             }else{
                 animation = this.player.direction;
             }
+            if(this.spaceKey.isDown){
+                this.createBomb();
+            }
             this.player.anims.play(animation, true);
             this.socket.emit('movement', {x: this.player.x, y: this.player.y, animation: animation});
         }
-    }     
+    } 
+
+    createBomb(){
+        if (this.canPlantBomb){
+            this.canPlantBomb = false;
+            if (!this.image) {
+                this.setBomb();
+            } 
+        }
+        this.updateCanPlantBombs();
+    }
+
+    setBomb(){
+        self = this;
+        this.decor.forEachTile(function(tile){
+            if (self.tileContainsPoint(tile, self.player.x, self.player.y)){
+                const bomb_x = tile.x*tile_width+tile_width/2;
+                const bomb_y = tile.y*tile_height+tile_height/2;
+                self.socket.emit('bombPlacement', {x: bomb_x, y: bomb_y});
+                self.image = self.physics.add.image(bomb_x, bomb_y, 'bomb').setScale(0.3);        
+            }
+        });
+        this.time.delayedCall(2000, function(){
+            self.socket.emit('enemyBombExploded');
+            this.image.destroy();
+            delete this.image;
+        }, [], this);
+    }
+
+    tileContainsPoint(tile, x, y){
+        return x >= tile.x * tile_width && x <= tile.x * tile_width + tile_width
+               && y >= tile.y * tile_height && y <= tile.y * tile_height + tile_height;
+    }
+
+    updateCanPlantBombs(){
+        if (!this.bombEvent){
+            this.bombEvent = this.time.delayedCall(3000, () => this.canPlantBomb = true, [], this);
+        }else{
+            delete this.bombEvent;
+        }
+    }
+
+    
 }
