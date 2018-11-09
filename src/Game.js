@@ -71,6 +71,7 @@ export default class Game extends Phaser.Scene {
             this.player = this.physics.add.sprite(spawnPoint.x, spawnPoint.y, playerNumber);
             this.player.playerNumber = playerNumber;
             this.physics.add.collider(this.player, this.decor);
+            this.addCamera();
             this.socket.emit('movement', {x: this.player.x, y: this.player.y, animation: 'steady_down' + playerNumber});
             
         }else{
@@ -81,6 +82,12 @@ export default class Game extends Phaser.Scene {
             this.players.add(otherPlayer);
         }
     }   
+
+    addCamera(){
+        this.cameras.main.setBounds(0, 0, 1923, 1923);
+        this.cameras.main.startFollow(this.player, true, 0.09, 0.09);
+        this.cameras.main.setZoom(0.409);
+    }
 
     createAnimations(playerNumber){
         this.anims.create({
