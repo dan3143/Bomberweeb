@@ -7,21 +7,18 @@ export default class Game extends Phaser.Scene {
     
     preload(){
         this.load.image('tiles',"assets/maps/2Gen's 64x64 Mixed Tileset.png");
-        this.load.tilemapTiledJSON('map','assets/maps/MAPA.Json');
+        this.load.tilemapTiledJSON('map','assets/maps/MAPA.json');
         this.load.spritesheet('player1', 'assets/sprites/player1.png', {frameWidth: 32, frameHeight: 60});
         this.load.spritesheet('player2', 'assets/sprites/player2.png', {frameWidth: 28, frameHeight: 54});
     }
     createMap(){
-        const map = this.make.tilemap({key:"map"});
-        const tileset = map.addTilesetImage("2Gen's 64x64 Mixed Tileset",'tiles');
-        const decor = map.createStaticLayer('decor',tileset,0,0);
-        decor.setCollisionByProperty({collides:true});
-        this.physics.add.collider(this.players,decor);//creo que el problema está aquí
-        
+        this.map = this.make.tilemap({key:'map'});
+        this.tileset = this.map.addTilesetImage("2Gen's 64x64 Mixed Tileset",'tiles');
+        this.decor = this.map.createStaticLayer('decor', this.tileset, 0, 0);
+        this.decor.setCollisionByProperty({collides: true});
     }
     create(){
         this.initialize();
-        this.createMap();
     }
 
     update(){
@@ -29,6 +26,7 @@ export default class Game extends Phaser.Scene {
     }
 
     initialize(){
+        this.createMap();
         this.socket = io();
         this.cursors = this.input.keyboard.createCursorKeys();
         this.players = this.physics.add.group();
@@ -69,9 +67,14 @@ export default class Game extends Phaser.Scene {
         const playerNumber = player.playerNumber;
         this.createAnimations(playerNumber);
         if (player.playerId === this.socket.id){
-            this.player = this.physics.add.sprite(player.x, player.y, playerNumber);
+            const spawnPoint = this.map.findObject("Objects", obj => obj.name === ('spawn' + playerNumber));
+            this.player = this.physics.add.sprite(spawnPoint.x, spawnPoint.y, playerNumber);
             this.player.playerNumber = playerNumber;
+            this.physics.add.collider(this.player, this.decor);
+            this.socket.emit('movement', {x: this.player.x, y: this.player.y, animation: 'steady_down' + playerNumber});
+            
         }else{
+            
             const otherPlayer = this.physics.add.sprite(player.x, player.y, player.playerNumber);
             otherPlayer.playerId = player.playerId; 
             otherPlayer.setCollideWorldBounds(true);

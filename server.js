@@ -44,11 +44,12 @@ io.on('connect', function(socket){
         socket.emit('connectedPlayers', players);   
         
         players[socket.id] = {
-            x: Math.floor(Math.random() * 500) + 15,
-            y: Math.floor(Math.random() * 500) + 15,
+            x: 0,
+            y: 0,
             playerNumber: getPlayerNumber(),
             playerId: socket.id
-        }; 
+        };
+        
         io.sockets.emit('newPlayer', players[socket.id]);
     });
 });
