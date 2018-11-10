@@ -99,8 +99,8 @@ export default class Game extends Phaser.Scene {
             self.bombs.getChildren().forEach(function(currentBomb){
                 if (currentBomb.id === enemyBombId){
                     self.destroyThingsInRange(currentBomb);
+                    self.setBombExploSound.play();
                     currentBomb.destroy();
-                    
                 }
             });
         });
@@ -406,7 +406,7 @@ export default class Game extends Phaser.Scene {
         this.time.delayedCall(2000, function(){
             self.cooldown.setVisible(true);
             self.socket.emit('enemyBombExplosion', self.socket.id);
-            self.setBombExploSound.play();
+            
         }, [], this);
         this.updateCanPlantBombs();
     }
