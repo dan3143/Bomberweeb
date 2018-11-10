@@ -19,6 +19,7 @@ export default class Game extends Phaser.Scene {
         super({key: 'Game'});
         this.speed = 300;
         this.canPlantBomb = true;
+        this.range = 1;
     }
     
     preload(){
@@ -31,6 +32,7 @@ export default class Game extends Phaser.Scene {
         this.load.spritesheet('bomb', 'assets/sprites/bombSprite.png', {frameWidth: 32, frameHeight: 32});
         this.load.spritesheet('explosion_center', 'assets/sprites/explosion_center.png', {frameWidth: 64, frameHeight: 64});
         this.load.spritesheet('explosion_half', 'assets/sprites/explosion_half.png', {frameWidth: 64, frameHeight: 64});
+        this.load.spritesheet('explosion_end', 'assets/sprites/explosion_end.png', {frameWidth: 64, frameHeight: 64});
         this.load.spritesheet('death', 'assets/sprites/deathSprite.png', {frameWidth: 64, frameHeight: 64});
     }
 
@@ -87,7 +89,6 @@ export default class Game extends Phaser.Scene {
             var bomb = self.physics.add.sprite(bombPlacementInformation.x, bombPlacementInformation.y, 'bomb');
             bomb.anims.play('bomb_exploding_center', true);
             bomb.id = bombPlacementInformation.id;
-            
             self.bombs.add(bomb);   
         });
 
@@ -137,16 +138,24 @@ export default class Game extends Phaser.Scene {
         var bombTile = this.map.getTileAtWorldXY(bombInfo.x, bombInfo.y, true, this.cameras.main, this.background);
         var self = this;
         this.background.forEachTile(function(currentTile){
-            if (self.tileInRange(bombTile, currentTile, 1)) {
+            if (self.tileInRange(bombTile, currentTile, self.range)) {
                 self.playExplosionAnimationAtTile(currentTile, currentTile.y != bombTile.y);
+            }else if (self.distanceBetween(currentTile, bombTile) === self.range){
+                self.playExplosionAtEnd(currentTile, bombTile.y != currentTile.y, bombTile.x >= currentTile.x);
             }
         });
         this.decor.forEachTile(function(currentTile){
-            if (self.tileInRange(bombTile, currentTile, 1) && currentTile.properties.destroyable){
-                self.map.removeTileAt(currentTile.x, currentTile.y, false, true, self.decor);
-                self.socket.emit('removeTileAt', {x: currentTile.x, y: currentTile.y});
-                self.playExplosionAnimationAtTile(currentTile, currentTile.y != bombTile.y);
+            if (currentTile.properties.destroyable){
+                if (self.tileInRange(bombTile, currentTile, self.range)){
+                    self.map.removeTileAt(currentTile.x, currentTile.y, false, true, self.decor);
+                    self.socket.emit('removeTileAt', {x: currentTile.x, y: currentTile.y});
+                    self.playExplosionAnimationAtTile(currentTile, currentTile.y != bombTile.y);
+                }else if (self.distanceBetween(currentTile, bombTile) === self.range){
+                    self.map.removeTileAt(currentTile.x, currentTile.y, false, true, self.decor);
+                    self.playExplosionAtEnd(currentTile, bombTile.y != currentTile.y, bombTile.x >= currentTile.x);
+                }
             }
+            
         });
         var explosion_center = this.physics.add.sprite(bombInfo.x, bombInfo.y, 'bomb');
         explosion_center.anims.play('explosion_center', true);
@@ -155,10 +164,14 @@ export default class Game extends Phaser.Scene {
             explosion_center.destroy();
         });
     }   
+
+    distanceBetween(tile1, tile2){
+        return Math.sqrt(Math.pow(tile1.x - tile2.x, 2) + Math.pow(tile1.y - tile2.y, 2));
+    }
     
     tileInRange(originTile, destinyTile, range){
-        return  (destinyTile.y == originTile.y && destinyTile.x >= originTile.x - range && destinyTile.x <= originTile.x + range) ||
-                (destinyTile.x == originTile.x && destinyTile.y >= originTile.y - range && destinyTile.y <= originTile.y + range);
+        return  (destinyTile.y == originTile.y && destinyTile.x >= originTile.x - range + 1 && destinyTile.x <= originTile.x + range - 1) ||
+                (destinyTile.x == originTile.x && destinyTile.y >= originTile.y - range + 1 && destinyTile.y <= originTile.y + range - 1);
     }
 
     playExplosionAnimationAtTile(tile, vertical){
@@ -169,6 +182,23 @@ export default class Game extends Phaser.Scene {
             explosion.angle = 90;
         }
         explosion.anims.play('explosion_half', true);
+        this.physics.add.overlap(this.player, explosion, this.notifyPlayerKilled, null, this);
+        explosion.on('animationcomplete', function(){
+            explosion.destroy();
+        });
+    }
+
+    playExplosionAtEnd(tile, vertical, horizontal){
+        var x = tile.x*tileWidth + tileWidth/2;
+        var y = tile.y*tileWidth + tileWidth/2;
+        var explosion = this.physics.add.sprite(x, y, 'explosion_end');
+        if (vertical === true){
+            explosion.angle = 90;
+        }
+        if (horizontal === true){
+            explosion.flipX = true;
+        }
+        explosion.anims.play('explosion_end', true);
         this.physics.add.overlap(this.player, explosion, this.notifyPlayerKilled, null, this);
         explosion.on('animationcomplete', function(){
             explosion.destroy();
@@ -222,6 +252,11 @@ export default class Game extends Phaser.Scene {
         this.anims.create({
             key: 'explosion_center',
             frames: this.anims.generateFrameNumbers('explosion_center', {start: 0, end: 6}),
+            frameRate: 20
+        });
+        this.anims.create({
+            key: 'explosion_end',
+            frames: this.anims.generateFrameNumbers('explosion_end', {start: 0, end: 6}),
             frameRate: 20
         });
         this.anims.create({
