@@ -33,11 +33,19 @@ io.on('connect', function(socket){
             players[socket.id].x = movementInfo.x;
             players[socket.id].y = movementInfo.y;
             socket.broadcast.emit('playerMoved', {
-                x: movementInfo.x, 
+                x: movementInfo.x,
                 y: movementInfo.y, 
                 animation: movementInfo.animation, 
                 playerId: socket.id
             });
+        });
+        
+        socket.on('bombPlacement', function(bombPlacementInformation){
+            io.sockets.emit('bombPlaced', bombPlacementInformation);
+        });
+
+        socket.on('enemyBombExplosion', function(enemyBombId){
+            io.sockets.emit('enemyBombExploded', enemyBombId);
         });
         
         console.log("A player entered the game");

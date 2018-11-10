@@ -1,58 +1,46 @@
-{ "height":30,
+{ "height":13,
  "infinite":false,
  "layers":[
         {
-         "data":[59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 17, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 17, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59, 59],
-         "height":30,
-         "id":2,
-         "name":"fondo",
-         "opacity":1,
-         "type":"tilelayer",
-         "visible":true,
-         "width":30,
-         "x":0,
-         "y":0
-        }, 
-        {
-         "data":[256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 59, 142, 142, 190, 59, 190, 190, 190, 59, 142, 190, 190, 190, 59, 59, 59, 59, 190, 190, 190, 59, 59, 59, 59, 59, 59, 256, 256, 256, 256, 59, 142, 190, 190, 59, 190, 190, 190, 142, 142, 190, 190, 190, 59, 59, 59, 59, 142, 142, 142, 59, 59, 59, 142, 190, 190, 256, 256, 256, 256, 59, 59, 190, 190, 142, 142, 142, 142, 142, 190, 190, 190, 142, 190, 190, 190, 142, 142, 59, 142, 142, 142, 142, 142, 190, 190, 256, 256, 256, 256, 59, 59, 59, 59, 59, 59, 142, 142, 190, 190, 190, 190, 142, 190, 190, 190, 142, 59, 59, 59, 142, 59, 59, 59, 59, 59, 256, 256, 256, 256, 17, 142, 142, 142, 59, 190, 190, 190, 59, 59, 59, 59, 142, 190, 190, 142, 142, 59, 59, 59, 142, 59, 59, 59, 59, 59, 256, 256, 256, 256, 59, 190, 59, 59, 59, 59, 190, 190, 59, 59, 59, 59, 142, 59, 59, 59, 142, 190, 190, 190, 142, 142, 142, 190, 190, 190, 256, 256, 256, 256, 59, 190, 59, 59, 59, 59, 190, 142, 142, 142, 142, 59, 142, 59, 142, 142, 142, 190, 190, 190, 59, 59, 142, 142, 142, 190, 256, 256, 256, 256, 59, 142, 142, 142, 142, 142, 142, 142, 190, 190, 142, 142, 142, 142, 142, 190, 190, 190, 190, 190, 59, 59, 190, 190, 190, 190, 256, 256, 256, 256, 59, 142, 190, 59, 59, 142, 59, 59, 190, 190, 59, 59, 142, 59, 59, 59, 59, 190, 190, 142, 142, 142, 142, 142, 142, 142, 256, 256, 256, 256, 59, 59, 190, 59, 59, 142, 59, 59, 190, 190, 59, 59, 142, 59, 59, 59, 59, 190, 190, 59, 142, 59, 59, 59, 59, 59, 256, 256, 256, 256, 59, 59, 142, 142, 142, 142, 142, 190, 190, 190, 142, 142, 142, 142, 142, 190, 190, 142, 190, 59, 142, 59, 59, 59, 59, 59, 256, 256, 256, 256, 17, 190, 59, 59, 59, 190, 142, 142, 142, 190, 142, 190, 190, 190, 190, 190, 190, 142, 142, 142, 142, 142, 142, 190, 190, 190, 256, 256, 256, 256, 17, 190, 59, 59, 59, 190, 190, 59, 59, 190, 142, 190, 59, 59, 59, 190, 190, 142, 59, 190, 190, 190, 142, 190, 190, 190, 256, 256, 256, 256, 17, 142, 142, 142, 190, 190, 59, 59, 59, 190, 142, 142, 59, 59, 59, 190, 190, 142, 59, 190, 142, 190, 59, 59, 59, 59, 256, 256, 256, 256, 17, 59, 59, 142, 190, 142, 59, 59, 59, 190, 190, 142, 142, 142, 142, 190, 190, 142, 59, 142, 142, 142, 59, 59, 59, 59, 256, 256, 256, 256, 17, 59, 59, 142, 142, 142, 142, 142, 59, 59, 59, 142, 190, 190, 190, 190, 190, 142, 142, 142, 142, 142, 142, 142, 142, 190, 256, 256, 256, 256, 17, 59, 142, 142, 59, 59, 59, 142, 59, 59, 59, 142, 59, 59, 59, 190, 190, 190, 190, 190, 59, 59, 142, 190, 190, 190, 256, 256, 256, 256, 17, 59, 142, 59, 59, 59, 142, 142, 59, 59, 59, 142, 59, 59, 59, 190, 190, 190, 190, 190, 59, 59, 142, 190, 190, 190, 256, 256, 256, 256, 17, 59, 190, 59, 59, 59, 142, 190, 190, 190, 190, 142, 142, 142, 142, 142, 142, 142, 142, 142, 59, 59, 190, 59, 59, 59, 256, 256, 256, 256, 17, 190, 190, 190, 142, 142, 142, 142, 142, 142, 190, 142, 190, 190, 190, 190, 59, 142, 59, 142, 59, 59, 190, 59, 59, 59, 256, 256, 256, 256, 17, 190, 190, 190, 190, 142, 142, 190, 190, 190, 190, 142, 190, 190, 190, 190, 59, 190, 59, 142, 142, 142, 142, 142, 190, 190, 256, 256, 256, 256, 17, 142, 142, 142, 59, 59, 142, 59, 59, 59, 59, 142, 190, 190, 190, 142, 59, 190, 142, 142, 59, 59, 59, 59, 59, 59, 256, 256, 256, 256, 17, 190, 190, 142, 59, 59, 142, 59, 59, 59, 59, 142, 142, 142, 142, 142, 59, 190, 142, 59, 59, 142, 59, 59, 142, 59, 256, 256, 256, 256, 17, 190, 142, 142, 142, 142, 142, 142, 142, 142, 142, 142, 59, 142, 190, 190, 190, 190, 142, 142, 142, 142, 142, 142, 142, 59, 256, 256, 256, 256, 17, 59, 142, 59, 59, 142, 190, 190, 190, 190, 59, 59, 59, 142, 190, 190, 190, 142, 142, 190, 59, 59, 142, 190, 190, 190, 256, 256, 256, 256, 59, 59, 59, 59, 59, 59, 190, 190, 190, 190, 59, 59, 59, 59, 59, 59, 59, 190, 190, 190, 59, 59, 59, 190, 190, 190, 256, 256, 256, 256, 17, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 17, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256],
-         "height":30,
-         "id":1,
+         "data":[161, 161, 161, 161, 161, 161, 161, 161, 161, 161, 161, 161, 161, 161, 253, 253, 253, 253, 21, 21, 21, 21, 21, 21, 21, 161, 161, 21, 21, 21, 21, 253, 253, 253, 21, 253, 253, 253, 161, 161, 21, 21, 146, 21, 253, 146, 21, 253, 146, 21, 21, 161, 161, 21, 21, 21, 21, 21, 253, 21, 253, 21, 21, 21, 161, 161, 21, 21, 21, 21, 21, 253, 253, 253, 21, 253, 253, 161, 161, 253, 253, 146, 21, 21, 146, 21, 253, 146, 21, 21, 161, 161, 253, 253, 21, 21, 253, 253, 21, 253, 21, 21, 21, 161, 161, 21, 21, 253, 253, 21, 21, 21, 253, 21, 21, 21, 161, 161, 21, 21, 146, 253, 21, 146, 253, 21, 146, 253, 21, 161, 161, 21, 253, 253, 253, 21, 21, 21, 253, 21, 253, 21, 161, 161, 21, 253, 21, 21, 21, 21, 21, 253, 253, 21, 21, 161, 161, 161, 161, 161, 161, 161, 161, 161, 161, 161, 161, 161, 161],
+         "height":13,
+         "id":3,
          "name":"decor",
          "opacity":1,
          "type":"tilelayer",
          "visible":true,
-         "width":30,
+         "width":13,
          "x":0,
          "y":0
         }, 
         {
          "draworder":"topdown",
-         "id":4,
+         "id":2,
          "name":"Objects",
          "objects":[
                 {
                  "height":0,
-                 "id":49,
+                 "id":1,
                  "name":"spawnplayer1",
                  "point":true,
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":153.333333333333,
-                 "y":166.666666666667
+                 "x":97.6969696969697,
+                 "y":225.575757575758
                 }, 
                 {
                  "height":0,
-                 "id":50,
+                 "id":3,
                  "name":"spawnplayer2",
                  "point":true,
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":1763.63636363636,
-                 "y":1515.15151515152
+                 "x":735.151515151515,
+                 "y":606.666666666666
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -60,8 +48,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":5,
- "nextobjectid":52,
+ "nextlayerid":4,
+ "nextobjectid":4,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.2.0",
@@ -86,6 +74,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -93,6 +86,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -104,6 +102,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -111,6 +114,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -122,6 +130,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -129,6 +142,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -140,6 +158,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -147,6 +170,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -158,6 +186,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -165,6 +198,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -176,6 +214,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -183,6 +226,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -194,6 +242,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -201,6 +254,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -212,6 +270,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -219,6 +282,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -230,6 +298,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -237,6 +310,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -248,6 +326,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -255,6 +338,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -266,6 +354,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -273,6 +366,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -284,6 +382,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -291,6 +394,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -302,6 +410,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -309,6 +422,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -320,6 +438,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -327,6 +450,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -338,6 +466,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -345,6 +478,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -356,6 +494,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -363,6 +506,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -374,6 +522,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -381,6 +534,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -392,6 +550,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -399,6 +562,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -410,6 +578,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -417,6 +590,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -428,6 +606,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -435,6 +618,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -446,6 +634,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -453,6 +646,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -464,6 +662,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -471,6 +674,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -482,6 +690,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -489,6 +702,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -500,6 +718,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -507,6 +730,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -518,6 +746,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -525,6 +758,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -536,6 +774,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -543,6 +786,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -554,6 +802,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -561,6 +814,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -572,6 +830,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -579,6 +842,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -590,6 +858,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -597,6 +870,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -608,6 +886,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -615,6 +898,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -626,6 +914,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -633,6 +926,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -644,6 +942,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -651,6 +954,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -662,6 +970,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -669,6 +982,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -680,6 +998,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -687,6 +1010,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -698,6 +1026,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -705,6 +1038,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -716,6 +1054,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -723,6 +1066,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -734,6 +1082,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -741,6 +1094,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -752,6 +1110,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -759,6 +1122,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -770,6 +1138,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -777,6 +1150,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -788,6 +1166,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -795,6 +1178,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -806,6 +1194,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -813,6 +1206,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -824,6 +1222,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -831,6 +1234,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -842,6 +1250,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -849,6 +1262,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -860,6 +1278,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -867,6 +1290,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -878,6 +1306,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -885,6 +1318,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -896,6 +1334,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -903,6 +1346,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -914,6 +1362,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -921,6 +1374,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -932,6 +1390,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -939,6 +1402,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -950,6 +1418,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -957,6 +1430,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -968,6 +1446,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -975,6 +1458,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -986,6 +1474,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -993,6 +1486,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1004,6 +1502,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1011,6 +1514,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1022,6 +1530,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1029,6 +1542,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1040,6 +1558,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1047,6 +1570,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1058,6 +1586,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1065,6 +1598,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1076,6 +1614,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1083,6 +1626,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1094,6 +1642,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1101,6 +1654,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1112,6 +1670,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1119,6 +1682,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1130,6 +1698,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1137,6 +1710,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1148,6 +1726,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1155,6 +1738,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1166,6 +1754,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1173,6 +1766,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1184,6 +1782,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1191,6 +1794,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1202,6 +1810,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1209,6 +1822,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1220,6 +1838,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1227,6 +1850,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1238,6 +1866,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1245,6 +1878,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1256,6 +1894,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1263,6 +1906,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1274,6 +1922,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1281,6 +1934,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1292,6 +1950,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1299,6 +1962,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1310,6 +1978,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1317,6 +1990,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1328,6 +2006,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1335,6 +2018,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1346,6 +2034,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1354,7 +2047,12 @@
                         {
                          "name":"collides",
                          "type":"bool",
-                         "value":true
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1362,6 +2060,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1373,6 +2076,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1382,6 +2090,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1389,6 +2102,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1400,6 +2118,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1407,6 +2130,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1418,6 +2146,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1425,6 +2158,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1436,6 +2174,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1443,6 +2186,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1454,6 +2202,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1461,6 +2214,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1472,6 +2230,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1479,6 +2242,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1490,6 +2258,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1497,6 +2270,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1508,6 +2286,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1517,6 +2300,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1524,6 +2312,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1535,6 +2328,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1542,6 +2340,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1553,6 +2356,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1560,6 +2368,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1571,6 +2384,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1578,6 +2396,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1589,6 +2412,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1596,6 +2424,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1607,6 +2440,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1614,6 +2452,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1625,6 +2468,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1632,6 +2480,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1643,6 +2496,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1650,6 +2508,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1661,6 +2524,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1668,6 +2536,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1679,6 +2552,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1686,6 +2564,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1697,6 +2580,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1704,6 +2592,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1715,6 +2608,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1722,6 +2620,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1733,6 +2636,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1740,6 +2648,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1751,6 +2664,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1758,6 +2676,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1769,6 +2692,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1776,6 +2704,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1786,7 +2719,12 @@
                         {
                          "name":"collides",
                          "type":"bool",
-                         "value":true
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1794,6 +2732,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1805,6 +2748,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1812,6 +2760,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1823,6 +2776,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1830,6 +2788,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1841,6 +2804,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1848,6 +2816,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1859,6 +2832,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1866,6 +2844,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1877,6 +2860,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1884,6 +2872,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1895,6 +2888,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1902,6 +2900,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1913,6 +2916,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1920,6 +2928,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1931,6 +2944,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1938,6 +2956,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1949,6 +2972,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1956,6 +2984,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1967,6 +3000,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1974,6 +3012,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -1985,6 +3028,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -1992,6 +3040,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -2003,6 +3056,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -2010,6 +3068,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -2021,6 +3084,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -2028,6 +3096,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -2039,6 +3112,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -2046,6 +3124,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -2057,6 +3140,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -2064,6 +3152,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -2075,6 +3168,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -2082,6 +3180,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -2093,6 +3196,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -2100,6 +3208,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -2111,6 +3224,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -2118,6 +3236,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -2129,6 +3252,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -2136,6 +3264,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -2147,6 +3280,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -2154,6 +3292,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -2165,6 +3308,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -2172,6 +3320,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -2183,6 +3336,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -2190,6 +3348,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -2201,6 +3364,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -2208,6 +3376,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -2219,6 +3392,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -2226,6 +3404,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -2237,6 +3420,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -2244,6 +3432,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -2255,6 +3448,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -2262,6 +3460,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -2273,6 +3476,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -2280,6 +3488,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -2291,6 +3504,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -2298,6 +3516,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -2309,6 +3532,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -2316,6 +3544,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -2327,6 +3560,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -2334,6 +3572,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -2345,6 +3588,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -2353,7 +3601,12 @@
                         {
                          "name":"collides",
                          "type":"bool",
-                         "value":false
+                         "value":true
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":true
                         }]
                 }, 
                 {
@@ -2361,6 +3614,11 @@
                  "properties":[
                         {
                          "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
                          "type":"bool",
                          "value":false
                         }]
@@ -2372,6 +3630,11 @@
                          "name":"collides",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -2380,7 +3643,12 @@
                         {
                          "name":"collides",
                          "type":"bool",
-                         "value":true
+                         "value":false
+                        }, 
+                        {
+                         "name":"destroyable",
+                         "type":"bool",
+                         "value":false
                         }]
                 }],
          "tilewidth":64
@@ -2388,5 +3656,5 @@
  "tilewidth":64,
  "type":"map",
  "version":1.2,
- "width":30
+ "width":13
 }

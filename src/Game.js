@@ -13,7 +13,7 @@ export default class Game extends Phaser.Scene {
     preload(){
         this.load.image('tiles',"assets/maps/2Gen's 64x64 Mixed Tileset.png");
         this.load.image('bomb', 'assets/sprites/bomb.png');
-        this.load.tilemapTiledJSON('map','assets/maps/map.json');
+        this.load.tilemapTiledJSON('map','assets/maps/small_map.json');
         this.load.spritesheet('player1', 'assets/sprites/player1.png', {frameWidth: 32, frameHeight: 60});
         this.load.spritesheet('player2', 'assets/sprites/player2.png', {frameWidth: 28, frameHeight: 54});
     }
@@ -60,6 +60,26 @@ export default class Game extends Phaser.Scene {
                 }
             });
         });
+
+        this.socket.on('bombPlaced', function(bombPlacementInformation){
+            console.log("Bomb placed");
+            var bomb = self.physics.add.sprite(bombPlacementInformation.x, bombPlacementInformation.y, 'bomb');
+            bomb.id = bombPlacementInformation.id;
+            self.bombs.add(bomb);   
+        });
+
+        this.socket.on('fuckyouall', function(){
+            console.log('No, fuck you');
+        });
+
+        this.socket.on('enemyBombExploded', function(enemyBombId){
+            self.bombs.getChildren().forEach(function(currentBomb){
+                if (currentBomb.id === enemyBombId){
+                    console.log("Destroying bomb...");
+                    currentBomb.destroy();
+                }
+            });
+        });
     }
     
     createMap(){
@@ -73,20 +93,20 @@ export default class Game extends Phaser.Scene {
         const playerNumber = player.playerNumber;
         this.createAnimations(playerNumber);
         if (player.playerId === this.socket.id){
-            const spawnPoint = this.map.findObject("Objects", obj => obj.name === ('spawn' + playerNumber));
+            let spawnPoint = this.map.findObject("Objects", obj => obj.name === ('spawn' + playerNumber));
+            console.log('X: ' + spawnPoint.x);
+            console.log('Y: ' + spawnPoint.y);
             this.player = this.physics.add.sprite(spawnPoint.x, spawnPoint.y, playerNumber);
             this.player.playerNumber = playerNumber;
-
+            //this.player.setCollideWorldBounds(true);
             this.physics.add.collider(this.player, this.decor);
             this.physics.add.collider(this.player, this.bombs);
-
             this.addCamera();
             this.socket.emit('movement', {x: this.player.x, y: this.player.y, animation: 'steady_down' + playerNumber});
             
         }else{
             const otherPlayer = this.physics.add.sprite(player.x, player.y, player.playerNumber);
             otherPlayer.playerId = player.playerId; 
-            otherPlayer.setCollideWorldBounds(true);
             this.players.add(otherPlayer);
         }
     }   
@@ -139,9 +159,9 @@ export default class Game extends Phaser.Scene {
     }
 
     addCamera(){
-        this.cameras.main.setBounds(0, 0, 1923, 1923);
+        this.cameras.main.setBounds(0, 0, 832, 832);
         this.cameras.main.startFollow(this.player, true, 0.09, 0.09);
-        this.cameras.main.setZoom(0.6);
+        this.cameras.main.setZoom(1);
     }
     
     update(){
@@ -195,16 +215,18 @@ export default class Game extends Phaser.Scene {
         self = this;
         this.decor.forEachTile(function(tile){
             if (self.tileContainsPoint(tile, self.player.x, self.player.y)){
-                const bomb_x = tile.x*tile_width+tile_width/2;
-                const bomb_y = tile.y*tile_height+tile_height/2;
-                self.socket.emit('bombPlacement', {x: bomb_x, y: bomb_y});
-                self.bomb = self.bombs.create(bomb_x, bomb_y, 'bomb');
+                const bomb_x = tile.x*tile_width + tile_width/2;
+                const bomb_y = tile.y*tile_height + tile_height/2;
+                self.socket.emit('bombPlacement', {x: bomb_x, y: bomb_y, id: self.socket.id});
+                //self.bomb = self.physics.add.sprite(bomb_x, bomb_y, 'bomb');
+                //self.bomb.id = self.socket.id;
+                //self.bombs.add(self.bomb);
             }
         });
         this.time.delayedCall(2000, function(){
-            self.socket.emit('enemyBombExploded');
-            this.bomb.destroy();
-            delete this.bomb;
+            self.socket.emit('enemyBombExplosion', self.socket.id);
+            //self.bomb.destroy();
+            //delete this.bomb;
         }, [], this);
     }
 
