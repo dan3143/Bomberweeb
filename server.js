@@ -47,6 +47,14 @@ io.on('connect', function(socket){
         socket.on('enemyBombExplosion', function(enemyBombId){
             io.sockets.emit('enemyBombExploded', enemyBombId);
         });
+
+        socket.on('removeTileAt', function(tilePosition){
+            socket.broadcast.emit('tileRemoved', tilePosition);
+        });
+
+        socket.on('playerKilledNotification', function(playerId){
+            io.sockets.emit('playerKilled', playerId);
+        });
         
         console.log("A player entered the game");
         socket.emit('connectedPlayers', players);   
