@@ -4,6 +4,7 @@ const tileHeight = 64;
 
 export default class Game extends Phaser.Scene {
     
+    //TODO: mostrar explosiones en un rango, evitando a los objetos intestructibles
 
     constructor(){
         super({key: 'Game'});
@@ -17,8 +18,9 @@ export default class Game extends Phaser.Scene {
         this.load.spritesheet('player1', 'assets/sprites/player1.png', {frameWidth: 32, frameHeight: 60});
         this.load.spritesheet('player2', 'assets/sprites/player2.png', {frameWidth: 28, frameHeight: 54});
         this.load.spritesheet('bomb', 'assets/sprites/bombSprite.png', {frameWidth: 32, frameHeight: 32});
-        this.load.spritesheet('explosion_center', 'assets/sprites/explosion_center2.png', {frameWidth: 64, frameHeight: 64});
-        this.load.spritesheet('explosion_half', 'assets/sprites/explosion_half2.png', {frameWidth: 64, frameHeight: 64});
+        this.load.spritesheet('explosion_center', 'assets/sprites/explosion_center.png', {frameWidth: 64, frameHeight: 64});
+        this.load.spritesheet('explosion_half', 'assets/sprites/explosion_half.png', {frameWidth: 64, frameHeight: 64});
+        this.load.spritesheet('death', 'assets/sprites/deathSprite.png', {frameWidth: 64, frameHeight: 64});
     }
 
     create(){
@@ -72,6 +74,7 @@ export default class Game extends Phaser.Scene {
             var bomb = self.physics.add.sprite(bombPlacementInformation.x, bombPlacementInformation.y, 'bomb');
             bomb.anims.play('bomb_exploding_center', true);
             bomb.id = bombPlacementInformation.id;
+            
             self.bombs.add(bomb);   
         });
 
@@ -85,32 +88,64 @@ export default class Game extends Phaser.Scene {
                 }
             });
         });
+
+        this.socket.on('tileRemoved', function(tiledRemoved){
+            self.map.removeTileAt(tiledRemoved.x, tiledRemoved.y, false, self.decor);
+        });
+
+        this.socket.on('playerKilled', function(playerId){
+            if (playerId === self.socket.id){
+                self.killThisPlayer();
+            }else{
+                self.players.getChildren().forEach(function(player){
+                    if(player.playerId === playerId){
+                        var x = player.x;
+                        var y = player.y;
+                        player.destroy();
+                        player = self.physics.add.sprite(x, y, 'death');
+                        player.anims.play('death', true);
+                    }
+                });
+            }
+            
+        });
+    }
+
+    killThisPlayer(){
+        var x = this.player.x;
+        var y = this.player.y;
+        this.player.destroy();
+        this.player = this.physics.add.sprite(x, y, 'death');
+        this.player.alive = false;
+        this.player.anims.play('death', true);
     }
 
     destroyThingsInRange(bombInfo){
-        var explosion_center = this.physics.add.sprite(bombInfo.x, bombInfo.y, 'bomb');
         var bombTile = this.map.getTileAtWorldXY(bombInfo.x, bombInfo.y, true, this.cameras.main, this.background);
-        console.log('Bomb info: ' + bombInfo.x + ", " + bombInfo.y);
-        console.log('Bomnb in tile (' + bombTile.x + ', ' + bombTile.y + ')');
-        explosion_center.anims.play('explosion_center', true);
-        explosion_center.on('animationcomplete', function(){
-            explosion_center.destroy();
-        });
         var self = this;
-        this.decor.forEachTile(function(currentTile){
-            if (self.tileInRange(bombTile, currentTile, 1)){
-                console.log("Tile in ("+currentTile.x+","+currentTile.y+" ) meets the requirements");
-                self.map.removeTileAt(currentTile.x, currentTile.y, false, true, self.decor);
+        this.background.forEachTile(function(currentTile){
+            if (self.tileInRange(bombTile, currentTile, 1)) {
                 self.playExplosionAnimationAtTile(currentTile, currentTile.y != bombTile.y);
             }
         });
-    }
-    
+        this.decor.forEachTile(function(currentTile){
+            if (self.tileInRange(bombTile, currentTile, 1) && currentTile.properties.destroyable){
+                self.map.removeTileAt(currentTile.x, currentTile.y, false, true, self.decor);
+                self.socket.emit('removeTileAt', {x: currentTile.x, y: currentTile.y});
+                self.playExplosionAnimationAtTile(currentTile, currentTile.y != bombTile.y);
+            }
+        });
+        var explosion_center = this.physics.add.sprite(bombInfo.x, bombInfo.y, 'bomb');
+        explosion_center.anims.play('explosion_center', true);
+        this.physics.add.overlap(this.player, explosion_center, this.notifyPlayerKilled, null, this);
+        explosion_center.on('animationcomplete', function(){
+            explosion_center.destroy();
+        });
+    }   
     
     tileInRange(originTile, destinyTile, range){
-        return  destinyTile.properties.destroyable === true && (
-                (destinyTile.y == originTile.y && destinyTile.x >= originTile.x - range && destinyTile.x <= originTile.x + range) ||
-                (destinyTile.x == originTile.x && destinyTile.y >= originTile.y - range && destinyTile.y <= originTile.y + range));
+        return  (destinyTile.y == originTile.y && destinyTile.x >= originTile.x - range && destinyTile.x <= originTile.x + range) ||
+                (destinyTile.x == originTile.x && destinyTile.y >= originTile.y - range && destinyTile.y <= originTile.y + range);
     }
 
     playExplosionAnimationAtTile(tile, vertical){
@@ -121,9 +156,14 @@ export default class Game extends Phaser.Scene {
             explosion.angle = 90;
         }
         explosion.anims.play('explosion_half', true);
+        this.physics.add.overlap(this.player, explosion, this.notifyPlayerKilled, null, this);
         explosion.on('animationcomplete', function(){
             explosion.destroy();
         });
+    }
+
+    notifyPlayerKilled(){
+        this.socket.emit('playerKilledNotification', this.socket.id);
     }
 
     createMap(){
@@ -141,8 +181,10 @@ export default class Game extends Phaser.Scene {
             let spawnPoint = this.map.findObject("Objects", obj => obj.name === ('spawn' + playerNumber));
             this.player = this.physics.add.sprite(spawnPoint.x, spawnPoint.y, playerNumber);
             this.player.playerNumber = playerNumber;
+            this.player.alive = true;
             this.physics.add.collider(this.player, this.decor);
             this.physics.add.collider(this.player, this.bombs);
+            
             this.addCamera();
             this.socket.emit('movement', {x: this.player.x, y: this.player.y, animation: 'steady_down' + playerNumber});
             
@@ -168,6 +210,11 @@ export default class Game extends Phaser.Scene {
             key: 'explosion_center',
             frames: this.anims.generateFrameNumbers('explosion_center', {start: 0, end: 6}),
             frameRate: 20
+        });
+        this.anims.create({
+            key: 'death',
+            frames: this.anims.generateFrameNumbers('death', {start: 0, end: 3}),
+            frameRate: 10
         });
         this.anims.create({
             key: 'up' + playerNumber,
@@ -228,7 +275,7 @@ export default class Game extends Phaser.Scene {
     }
 
     movePlayer(){
-        if (this.player) {
+        if (this.player && this.player.alive === true)  {
             if (!this.player.direction) this.player.direction = 'steady_down' + this.player.playerNumber;
             var animation = 'steady_down' + this.player.playerNumber;
             this.player.setVelocity(0);
