@@ -1,7 +1,16 @@
 
 const tileWidth = 64;
 const tileHeight = 64;
-
+var musicConf =
+    {
+        mute: false,
+        volume: 1,
+        rate: 1,
+        detune: 0,
+        seek: 0,
+        loop: false,
+        delay: 0
+    };
 export default class Game extends Phaser.Scene {
     
 
@@ -14,6 +23,8 @@ export default class Game extends Phaser.Scene {
     preload(){
         this.load.image('tiles',"assets/maps/2Gen's 64x64 Mixed Tileset.png");
         this.load.tilemapTiledJSON('map','assets/maps/map.json');
+        this.load.audio('bombSound1',"assets/sounds/bombSetted.mp3");
+        this.load.audio('bombSound2',"assets/sounds/expuroshon.mp3");
         this.load.spritesheet('player1', 'assets/sprites/player1.png', {frameWidth: 32, frameHeight: 60});
         this.load.spritesheet('player2', 'assets/sprites/player2.png', {frameWidth: 28, frameHeight: 54});
         this.load.spritesheet('bomb', 'assets/sprites/bombSprite.png', {frameWidth: 32, frameHeight: 32});
@@ -28,6 +39,8 @@ export default class Game extends Phaser.Scene {
     initialize(){
         this.createMap();
         this.socket = io();
+        this.setBombSound = this.sound.add('bombSound1',musicConf);
+        this.setBombExploSound = this.sound.add('bombSound2',musicConf);
         this.cursors = this.input.keyboard.createCursorKeys();
         this.players = this.physics.add.group();
         this.bombs = this.physics.add.staticGroup();
@@ -274,6 +287,7 @@ export default class Game extends Phaser.Scene {
 
     setBomb(){
         self = this;
+        this.setBombSound.play();
         this.decor.forEachTile(function(tile){
             if (self.tileContainsPoint(tile, self.player.x, self.player.y)){
                 const bomb_x = tile.x*tileWidth + tileWidth/2;
@@ -284,6 +298,7 @@ export default class Game extends Phaser.Scene {
         this.cooldown.setVisible(true);
         this.time.delayedCall(2000, function(){
             self.socket.emit('enemyBombExplosion', self.socket.id);
+            self.setBombExploSound.play();
         }, [], this);
     }
 
