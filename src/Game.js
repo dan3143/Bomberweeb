@@ -408,5 +408,4 @@ export default class Game extends Phaser.Scene {
             this.cooldown.setText('Cooldown: ' + cooldown);
         }   
     }
-    
 }

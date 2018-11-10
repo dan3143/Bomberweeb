@@ -21,7 +21,7 @@ export default class MainMenu extends Phaser.Scene {
 
     preload() {
         this.load.image('tiles',"assets/maps/2Gen's 64x64 Mixed Tileset.png");
-        this.load.audio('music',"assets/sounds/Bomberman.mp3");
+        this.load.audio('music',"assets/sounds/bomberman.mp3");
     }
 
     create() {   
