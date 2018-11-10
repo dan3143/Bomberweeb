@@ -85,7 +85,6 @@ export default class Game extends Phaser.Scene {
         });
 
         this.socket.on('bombPlaced', function(bombPlacementInformation){
-            console.log("Bomb placed");
             var bomb = self.physics.add.sprite(bombPlacementInformation.x, bombPlacementInformation.y, 'bomb');
             bomb.anims.play('bomb_exploding_center', true);
             bomb.id = bombPlacementInformation.id;
@@ -95,7 +94,6 @@ export default class Game extends Phaser.Scene {
         this.socket.on('enemyBombExploded', function(enemyBombId){
             self.bombs.getChildren().forEach(function(currentBomb){
                 if (currentBomb.id === enemyBombId){
-                    console.log("Destroying bomb...");
                     self.destroyThingsInRange(currentBomb);
                     currentBomb.destroy();
                     
@@ -355,16 +353,15 @@ export default class Game extends Phaser.Scene {
         }
     }
 
-    
-
     createBomb(){
-        if (this.canPlantBomb){
+        console.log('Can plant bomb: ' + this.canPlantBomb);
+        if (this.canPlantBomb === true){
             this.canPlantBomb = false;
             if (!this.bomb) {
                 this.setBomb();
             } 
         }
-        this.updateCanPlantBombs();
+        
     }
 
     setBomb(){
@@ -377,11 +374,11 @@ export default class Game extends Phaser.Scene {
                 self.socket.emit('bombPlacement', {x: bomb_x, y: bomb_y, id: self.socket.id});
             }
         });
-        this.cooldown.setVisible(true);
         this.time.delayedCall(2000, function(){
             self.socket.emit('enemyBombExplosion', self.socket.id);
             self.setBombExploSound.play();
         }, [], this);
+        this.updateCanPlantBombs();
     }
 
     tileContainsPoint(tile, x, y){
@@ -392,8 +389,8 @@ export default class Game extends Phaser.Scene {
     updateCanPlantBombs(){
         if (!this.bombEvent){
             this.cooldown.setVisible(true);
-            this.event = this.bombEvent = this.time.delayedCall(3000, () => {
-                delete this.event;
+            this.bombEvent = this.time.delayedCall(3000, () => {
+                delete this.bombEvent;
                 this.canPlantBomb = true
                 this.cooldown.setVisible(false);
             }, [], this);
