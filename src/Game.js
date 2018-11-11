@@ -1,22 +1,21 @@
-import EndScene from "./EndScene.js";
-
 const tileWidth = 64;
 const tileHeight = 64;
 var musicConf =
-    {
-        mute: false,
-        volume: 1,
-        rate: 1,
-        detune: 0,
-        seek: 0,
-        loop: false,
-        delay: 0
-    };
+{
+    mute: false,
+    volume: 1,
+    rate: 1,
+    detune: 0,
+    seek: 0,
+    loop: false,
+    delay: 0
+};
 export default class Game extends Phaser.Scene {
     
     constructor(){
         super({key: 'Game'});
         this.speed = 300;
+        this.bombCounter = 10;
         this.canPlantBomb = true;
         this.reach = 1;
         this.range = {
@@ -55,6 +54,9 @@ export default class Game extends Phaser.Scene {
         this.bombs = this.physics.add.staticGroup();
         this.spaceKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
         this.cooldown = this.add.text(16, 550, '',
+            {font: "18px monospace"})
+            .setScrollFactor(0);
+        this.bombCounterText = this.add.text(570, 550, 'Bombas: 10',
             {font: "18px monospace"})
             .setScrollFactor(0);
         var self = this;
@@ -359,6 +361,11 @@ export default class Game extends Phaser.Scene {
 
     movePlayer(){
         if (this.player && this.player.alive === true)  {
+            if (this.bombCounter <= 0){
+                this.player.alive = false;
+                this.socket.emit('playerKilledNotification', this.player.id);
+                return;
+            }
             if (!this.player.direction) this.player.direction = 'steady_down' + this.player.playerNumber;
             var animation = 'steady_down' + this.player.playerNumber;
             this.player.setVelocity(0);
@@ -381,6 +388,7 @@ export default class Game extends Phaser.Scene {
             }else{
                 animation = this.player.direction;
             }
+            
             if(this.spaceKey.isDown){
                 this.createBomb();
             }
@@ -403,6 +411,8 @@ export default class Game extends Phaser.Scene {
     setBomb(){
         self = this;
         this.setBombSound.play();
+        this.bombCounter--;
+        this.bombCounterText.setText('Bombas: ' + (this.bombCounter-1));
         this.destructible.forEachTile(function(tile){
             if (self.tileContainsPoint(tile, self.player.x, self.player.y)){
                 const bomb_x = tile.x*tileWidth + tileWidth/2;

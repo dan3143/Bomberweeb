@@ -1,5 +1,3 @@
-import MainMenu from './MainMenu.js';
-
 export default class EndScene extends Phaser.Scene {
     
     constructor(){
