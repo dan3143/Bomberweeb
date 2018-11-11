@@ -14,21 +14,10 @@ export default class Game extends Phaser.Scene {
     
     constructor(){
         super({key: 'Game'});
-        this.speed = 300;
-        this.bombCounter = 10;
-        this.canPlantBomb = true;
-        this.cooldown = 3;
-        this.reach = 1;
-        this.range = {
-            up: this.reach,
-            down: this.reach,
-            right: this.reach,
-            left: this.reach
-        };
+        
     }
     
     preload(){
-        this.bombCounter = 10;
         this.load.image('tiles',"assets/maps/2Gen's 64x64 Mixed Tileset.png");
         this.load.tilemapTiledJSON('map','assets/maps/map.json');
         this.load.audio('bombSound1',"assets/sounds/bombSetted.mp3");
@@ -54,6 +43,17 @@ export default class Game extends Phaser.Scene {
         this.cursors = this.input.keyboard.createCursorKeys();
         this.players = this.physics.add.group();
         this.bombs = this.physics.add.staticGroup();
+        this.speed = 300;
+        this.bombCounter = 10;
+        this.canPlantBomb = true;
+        this.cooldown = 3;
+        this.reach = 1;
+        this.range = {
+            up: this.reach,
+            down: this.reach,
+            right: this.reach,
+            left: this.reach
+        };
         this.spaceKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
         this.cooldownText = this.add.text(16, 550, '',
             {font: "18px monospace"})
@@ -363,11 +363,7 @@ export default class Game extends Phaser.Scene {
 
     movePlayer(){
         if (this.player && this.player.alive === true)  {
-            if (this.bombCounter <= 0){
-                this.player.alive = false;
-                this.socket.emit('playerKilledNotification', this.player.id);
-                return;
-            }
+            
             if (!this.player.direction) this.player.direction = 'steady_down' + this.player.playerNumber;
             var animation = 'steady_down' + this.player.playerNumber;
             this.player.setVelocity(0);
@@ -390,12 +386,18 @@ export default class Game extends Phaser.Scene {
             }else{
                 animation = this.player.direction;
             }
-            
-            if(this.spaceKey.isDown){
-                this.createBomb();
-            }
             this.player.anims.play(animation, true);
             this.socket.emit('movement', {x: this.player.x, y: this.player.y, animation: animation});
+            
+            console.log("Bombs: " + this.bombCounter);
+            
+            if (this.bombCounter <= 0){
+                this.killThisPlayer();
+            }else{
+                if(this.spaceKey.isDown){
+                    this.createBomb();
+                }
+            }
         }
     }
 

@@ -21,6 +21,7 @@ io.on('connect', function(socket){
 
     socket.on('playerWaiting', function(){
         numberOfPLayersWaiting++;
+        console.log('numberOfPlayersWaiting: ' + numberOfPLayersWaiting);
         if (numberOfPLayersWaiting > 2){
             console.log("Sorry fam, we're complete");
             numberOfPLayersWaiting--;
@@ -29,8 +30,11 @@ io.on('connect', function(socket){
         }
         socket.on('disconnect', function(){
             numberOfPLayersWaiting--;
-            console.log('Pussy');   
+            console.log('numberOfPlayersWaiting: ' + numberOfPLayersWaiting);   
             io.sockets.emit('notAllPlayersReady');
+        });
+        socket.on('ready', function(){
+            socket.broadcast.emit('go');
         });
         if (numberOfPLayersWaiting == 2){
             io.sockets.emit('allPlayersReady');
@@ -41,7 +45,6 @@ io.on('connect', function(socket){
         numberOfPLayers++;
         console.log("A player entered the game");
         console.log("Number of players: " + numberOfPLayers + "\n");
-        
         if (numberOfPLayers > connections_limit){
             numberOfPLayers--;
             console.log('Maximun players exceeded');
@@ -51,6 +54,8 @@ io.on('connect', function(socket){
             
             return;
         }
+
+        numberOfPLayersWaiting = 0;
         socket.on('disconnect', function(){
             numberOfPLayers--;
             socket.broadcast.emit('playerDisconnected', socket.id);
@@ -84,7 +89,7 @@ io.on('connect', function(socket){
 
         socket.on('playerKilledNotification', function(playerId){
             io.sockets.emit('playerKilled', playerId);
-            numberOfPLayersWaiting = 0;
+            
             for (var id in players){
                 if (id !== playerId){
                     io.sockets.emit('winner', players[id].playerNumber);
