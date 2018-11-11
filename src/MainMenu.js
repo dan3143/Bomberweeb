@@ -1,6 +1,3 @@
-import Game from './Game.js';
-
-
 export default class MainMenu extends Phaser.Scene {
     
     constructor() {
@@ -44,7 +41,7 @@ export default class MainMenu extends Phaser.Scene {
 
         this.startGame.on('pointerdown', function(){
             self.startGame.setColor("#000000");
-            self.scene.start('Game');
+            self.scene.start('WaitRoom');
             //self.scene.stop();
             self.socket.disconnect();
         });

@@ -17,6 +17,7 @@ export default class Game extends Phaser.Scene {
         this.speed = 300;
         this.bombCounter = 10;
         this.canPlantBomb = true;
+        this.cooldown = 3;
         this.reach = 1;
         this.range = {
             up: this.reach,
@@ -27,11 +28,12 @@ export default class Game extends Phaser.Scene {
     }
     
     preload(){
+        this.bombCounter = 10;
         this.load.image('tiles',"assets/maps/2Gen's 64x64 Mixed Tileset.png");
         this.load.tilemapTiledJSON('map','assets/maps/map.json');
         this.load.audio('bombSound1',"assets/sounds/bombSetted.mp3");
         this.load.audio('bombSound2',"assets/sounds/expuroshon.mp3");
-        this.load.spritesheet('player1', 'assets/sprites/player1.png', {frameWidth: 32, frameHeight: 60});
+        this.load.spritesheet('player1', 'assets/sprites/monaChinaSprite.png', {frameWidth: 32, frameHeight: 54});
         this.load.spritesheet('player2', 'assets/sprites/player2.png', {frameWidth: 28, frameHeight: 54});
         this.load.spritesheet('bomb', 'assets/sprites/bombSprite.png', {frameWidth: 32, frameHeight: 32});
         this.load.spritesheet('explosion_center', 'assets/sprites/explosion_center.png', {frameWidth: 64, frameHeight: 64});
@@ -53,7 +55,7 @@ export default class Game extends Phaser.Scene {
         this.players = this.physics.add.group();
         this.bombs = this.physics.add.staticGroup();
         this.spaceKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
-        this.cooldown = this.add.text(16, 550, '',
+        this.cooldownText = this.add.text(16, 550, '',
             {font: "18px monospace"})
             .setScrollFactor(0);
         this.bombCounterText = this.add.text(570, 550, 'Bombas: 10',
@@ -421,7 +423,7 @@ export default class Game extends Phaser.Scene {
             }
         });
         this.time.delayedCall(2000, function(){
-            self.cooldown.setVisible(true);
+            self.cooldownText.setVisible(true);
             self.socket.emit('enemyBombExplosion', self.socket.id);
             
         }, [], this);
@@ -435,18 +437,18 @@ export default class Game extends Phaser.Scene {
 
     updateCanPlantBombs(){
         if (!this.bombEvent){
-            this.bombEvent = this.time.delayedCall(3000, () => {
+            this.bombEvent = this.time.delayedCall(this.cooldown * 1000, () => {
                 delete this.bombEvent;
                 this.canPlantBomb = true
-                this.cooldown.setVisible(false);
+                this.cooldownText.setVisible(false);
             }, [], this);
         }
     }
     showCoolDown(){
         if (this.bombEvent){
-            this.cooldown.setVisible(true);
-            let cooldown = Math.trunc(3 - this.bombEvent.getProgress()*3) + 1;
-            this.cooldown.setText('Cooldown: ' + cooldown);
+            this.cooldownText.setVisible(true);
+            let cooldownText = Math.trunc(this.cooldown - this.bombEvent.getProgress()*this.cooldown) + 1;
+            this.cooldownText.setText('Cooldown: ' + cooldownText);
         }   
     }
 }

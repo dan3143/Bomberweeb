@@ -6,8 +6,10 @@ const connections_limit = 2;
 
 var players = {};
 var numberOfPLayers = 0;
+var numberOfPLayersWaiting = 0;
 var player1 = false;
 var player2 = false;
+
 
 app.use(express.static(__dirname));
 
@@ -16,6 +18,24 @@ app.get('/', function(req, res){
 });    
 
 io.on('connect', function(socket){
+
+    socket.on('playerWaiting', function(){
+        numberOfPLayersWaiting++;
+        if (numberOfPLayersWaiting > 2){
+            console.log("Sorry fam, we're complete");
+            numberOfPLayersWaiting--;
+            socket.disconnect();
+            return;
+        }
+        socket.on('disconnect', function(){
+            numberOfPLayersWaiting--;
+            console.log('Pussy');   
+            io.sockets.emit('notAllPlayersReady');
+        });
+        if (numberOfPLayersWaiting == 2){
+            io.sockets.emit('allPlayersReady');
+        }
+    });
     
     socket.on('playerConnected', function(){
         numberOfPLayers++;
@@ -62,9 +82,9 @@ io.on('connect', function(socket){
             socket.broadcast.emit('tileRemoved', tilePosition);
         });
 
-
         socket.on('playerKilledNotification', function(playerId){
             io.sockets.emit('playerKilled', playerId);
+            numberOfPLayersWaiting = 0;
             for (var id in players){
                 if (id !== playerId){
                     io.sockets.emit('winner', players[id].playerNumber);
