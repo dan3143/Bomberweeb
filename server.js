@@ -60,6 +60,12 @@ io.on('connect', function(socket){
             numberOfPLayers--;
             socket.broadcast.emit('playerDisconnected', socket.id);
             console.log('Number of players: ' + numberOfPLayers + "\n");
+            for (var id in players){
+                if (id !== socket.id){
+                    io.sockets.emit('winner', players[id].playerNumber);
+                    break;
+                }
+            }
             delete players[socket.id];
             console.log('Player disconnected');
         });
