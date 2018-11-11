@@ -5,7 +5,7 @@ const io = require('socket.io')(server);
 const connections_limit = 2;
 
 var players = {};
-
+var numberOfPLayers = 0;
 var player1 = false;
 var player2 = false;
 
@@ -16,15 +16,25 @@ app.get('/', function(req, res){
 });    
 
 io.on('connect', function(socket){
-    if (io.engine.clientsCount > connections_limit){
-        console.log('Maximun players exceeded');
-        console.log('Disconnecting...');
-        socket.disconnect();
-        return;
-    }
+    
     socket.on('playerConnected', function(){
+        numberOfPLayers++;
+        console.log("A player entered the game");
+        console.log("Number of players: " + numberOfPLayers + "\n");
+        
+        if (numberOfPLayers > connections_limit){
+            numberOfPLayers--;
+            console.log('Maximun players exceeded');
+            console.log('Disconnecting...');
+            console.log('Number of players: ' + numberOfPLayers + "\n");
+            socket.disconnect();
+            
+            return;
+        }
         socket.on('disconnect', function(){
+            numberOfPLayers--;
             socket.broadcast.emit('playerDisconnected', socket.id);
+            console.log('Number of players: ' + numberOfPLayers + "\n");
             delete players[socket.id];
             console.log('Player disconnected');
         });
@@ -52,11 +62,21 @@ io.on('connect', function(socket){
             socket.broadcast.emit('tileRemoved', tilePosition);
         });
 
+
         socket.on('playerKilledNotification', function(playerId){
             io.sockets.emit('playerKilled', playerId);
+            for (var id in players){
+                if (id !== playerId){
+                    io.sockets.emit('winner', players[id].playerNumber);
+                    break;
+                }
+            }
+        });
+
+        socket.on('winnerOpened', function(){
+            players = {};
         });
         
-        console.log("A player entered the game");
         socket.emit('connectedPlayers', players);   
         
         players[socket.id] = {

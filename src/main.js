@@ -1,6 +1,7 @@
-import MainMenu from '/src/MainMenu.js';
-import Game from '/src/Game.js';
-//import Game from 'Game.js';
+import MainMenu from './MainMenu.js';
+import EndScene from './EndScene.js';
+import Game from './Game.js';
+import MusicManager from './MusicManager.js';
 
 var config = {
     type: Phaser.AUTO,
@@ -11,8 +12,7 @@ var config = {
         default: 'arcade'
     },
     backgroundColor: '#32698C',
-    scene: [MainMenu, Game]
+    scene: [MusicManager, MainMenu, Game, EndScene]
 };
-
 
 var game = new Phaser.Game(config);

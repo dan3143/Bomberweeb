@@ -1,3 +1,5 @@
+import EndScene from "./EndScene.js";
+
 const tileWidth = 64;
 const tileHeight = 64;
 var musicConf =
@@ -12,8 +14,6 @@ var musicConf =
     };
 export default class Game extends Phaser.Scene {
     
-    //TODO: mostrar explosiones en un rango, evitando a los objetos intestructibles
-
     constructor(){
         super({key: 'Game'});
         this.speed = 300;
@@ -125,6 +125,13 @@ export default class Game extends Phaser.Scene {
             }
             
         });
+
+        this.socket.on('winner', function(winner){
+            self.time.delayedCall(2000, function(){
+                self.scene.start('EndScene', {player: winner});
+                self.socket.disconnect();
+            }, [], self);
+        });
     }
 
     killThisPlayer(){
@@ -141,7 +148,7 @@ export default class Game extends Phaser.Scene {
         var self = this;
         
         this.indestructible.forEachTile(function(currentTile){
-            console.log("Current tile in: " + currentTile.x + ", " + currentTile.y);
+            //console.log("Current tile in: " + currentTile.x + ", " + currentTile.y);
             if (currentTile.properties.indestructible === true && self.tileInRange(bombTile, currentTile, self.range)){
                 if (currentTile.x < bombTile.x){
                     self.range.left = Math.abs(bombTile.x - currentTile.x) - 1;
