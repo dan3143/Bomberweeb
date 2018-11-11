@@ -132,7 +132,7 @@ export default class Game extends Phaser.Scene {
 
         this.socket.on('winner', function(winner){
             self.time.delayedCall(2000, function(){
-                self.scene.start('EndScene', {player: winner});
+                self.scene.launch('EndScene', {player: winner});
                 self.socket.disconnect();
             }, [], self);
         });
@@ -390,7 +390,7 @@ export default class Game extends Phaser.Scene {
             this.socket.emit('movement', {x: this.player.x, y: this.player.y, animation: animation});
             
             console.log("Bombs: " + this.bombCounter);
-            
+
             if (this.bombCounter <= 0){
                 this.killThisPlayer();
             }else{

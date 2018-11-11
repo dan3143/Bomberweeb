@@ -14,7 +14,7 @@ export default class EndScene extends Phaser.Scene {
     create(){
         this.socket = io();
         this.socket.emit('winnerOpened');
-        this.graphics = this.add.graphics({fillStyle: {color: 0x000000}});
+        this.graphics = this.add.graphics({fillStyle: {color: 0x000000, alpha: 0.6}});
         var rect = new Phaser.Geom.Rectangle(0, 0, 700, 600);
         this.graphics.fillRectShape(rect);
         this.add.text(200, 200, "Ganó " + this.winnerPlayer, { font: "40px Monospace", fill: "#FFFFFF" }),

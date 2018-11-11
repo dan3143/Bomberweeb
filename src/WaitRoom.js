@@ -4,7 +4,6 @@ export default class WaitRoom extends Phaser.Scene {
     }
     create(){
         var self = this;
-        var entered = false;
         this.socket = io();
         this.socket.emit('playerWaiting');
         this.add.text(100, 100, 'Sala de espera', {font: '50px Courier'});
