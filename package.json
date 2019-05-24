@@ -1,15 +1,15 @@
 {
-  "name": "expurosion",
+  "name": "Bomberweeb",
   "version": "1.0.0",
   "description": "A game based in bomberman, with a weeb touch",
   "main": "server.js",
   "scripts": {
-    "start": "server.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dan3143/Expurosion.git"
+    "url": "git+https://github.com/dan3143/Bomberweeb.git"
   },
   "keywords": [
     "phaser",
@@ -19,9 +19,9 @@
   "author": "TheProgrammerWeebs",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dan3143/Expurosion/issues"
+    "url": "https://github.com/dan3143/Bomberweeb/issues"
   },
-  "homepage": "https://github.com/dan3143/Expurosion#readme",
+  "homepage": "https://github.com/dan3143/Bomberweeb#readme",
   "dependencies": {
     "colors": "^1.3.2",
     "express": "^4.16.4",

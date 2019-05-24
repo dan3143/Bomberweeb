@@ -3,6 +3,7 @@ const app = express();
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
 const connections_limit = 2;
+const port=process.env.PORT || 3000
 
 var players = {};
 var numberOfPLayers = 0;
@@ -135,6 +136,6 @@ function getPlayerNumber(){
     }
 }
 
-server.listen(8080, function(){
-    console.log("Server on, listening to port 8080");
+server.listen(port, function(){
+    console.log("Server on, listening to port " + port);
 }); 
